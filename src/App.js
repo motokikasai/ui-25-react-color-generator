@@ -35,7 +35,14 @@ class App extends React.Component {
   }
 
   randomHexGenerator() {
-    return Math.floor(Math.random() * 10000000).toString(16);
+    // console.log(Math.floor(Math.random() * 10000000).toString(16).length);
+    let randomHex = Math.floor(Math.random() * 10000000).toString(16);
+    while (randomHex.length !== 6) {
+      randomHex = Math.floor(Math.random() * 10000000).toString(16);
+      console.log(randomHex);
+    }
+
+    return randomHex;
   }
 
   render() {

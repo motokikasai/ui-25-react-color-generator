@@ -9,6 +9,7 @@
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, auto)); */
   margin: 20px;
+  margin-bottom: 140px;
 }
 
 .color-selection {
