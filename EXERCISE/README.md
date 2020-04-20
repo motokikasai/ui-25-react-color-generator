@@ -2,7 +2,7 @@
 
 Let's create a page that allows us to generate random colors.
 
-![example](example.gif)
+![example](./example.gif)
 
 1. When the user adds colors, they are added to the beggining of the list, so the last color added is always visible:
 
@@ -13,7 +13,7 @@ Let's create a page that allows us to generate random colors.
 ![Remove colors example](colors-remove-example.png)
 
 3. Once a new color is added, it appears again in the front:
-![Add colors example](colors-add-example.png)
+   ![Add colors example](colors-add-example.png)
 
 4. When there are no colors display a message:
 
