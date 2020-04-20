@@ -7,7 +7,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      color: [],
+      colors: [],
     };
 
     this.create = this.create.bind(this);
@@ -20,16 +20,16 @@ class App extends React.Component {
     console.log(randomHex);
 
     this.setState({
-      color: [...this.state.color, randomHex],
+      colors: [...this.state.colors, randomHex],
     });
   }
 
-  remove() {
-    console.log("color removed!");
+  remove(element) {
+    console.log(element);
 
     this.setState({
-      color: this.state.color.filter((each) => {
-        return null;
+      colors: this.state.colors.filter((each) => {
+        return each !== element;
       }),
     });
   }
@@ -42,17 +42,22 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="container">
-          {this.state.color.length === 0 ? (
-            <div className="bg-removed">
+          {this.state.colors.length === 0 ? (
+            <div className="bg-no-color">
               <img src={removedIcon} alt="" />
             </div>
           ) : (
-            this.state.color.map((elem) => {
+            this.state.colors.map((elem, i) => {
               return (
-                <div className="color-selection">
+                <div className="color-selection" key={i}>
                   <div className="color-box" style={{ background: elem }}></div>
                   <div className="hex">{elem}</div>
-                  <button onClick={this.remove} className="remove">
+                  <button
+                    onClick={() => {
+                      this.remove(elem);
+                    }}
+                    className="remove"
+                  >
                     Remove
                   </button>
                 </div>

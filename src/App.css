@@ -5,6 +5,9 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto)); */
   margin: 20px;
 }
 
@@ -13,10 +16,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 5px;
+  margin: 20px 5px;
 }
 
-.bg-removed {
+.bg-no-color {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +36,7 @@
 }
 
 .hex {
-  margin: 20px;
+  margin: 10px;
 }
 
 footer {
@@ -44,6 +47,8 @@ footer {
   align-items: center;
   width: 100%;
   border-top: 1px solid rgb(238, 238, 238);
+  box-shadow: 0 -6px 8px #a3a3a398;
+  background: rgb(240, 240, 240);
 }
 
 button {
