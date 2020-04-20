@@ -72,3 +72,44 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+/** ---------------------------------------
+* REACT CSS-TRANSITION GROUP
+* --------------------------------------- */
+
+.color-item-enter {
+  opacity: 0;
+}
+
+.color-item-enter-active {
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.color-item-done {
+  opacity: 1;
+}
+
+.color-item-exit {
+  opacity: 1;
+}
+
+.color-item-exit-active {
+  opacity: 0;
+  transition: all 500ms;
+}
+
+.color-item-done {
+  opacity: 0;
+}
+
+.color-item-appear {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+
+.color-item-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms;
+}

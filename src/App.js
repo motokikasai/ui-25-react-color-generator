@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import removedIcon from "./assets/bg-no-color.png";
+import { CSSTransition } from "react-transition-group";
+// import { TransitionGroup } from "react-transition-group";
 
 class App extends React.Component {
   constructor(props) {
@@ -35,7 +37,6 @@ class App extends React.Component {
   }
 
   randomHexGenerator() {
-    // console.log(Math.floor(Math.random() * 10000000).toString(16).length);
     let randomHex = Math.floor(Math.random() * 10000000).toString(16);
     while (randomHex.length !== 6) {
       randomHex = Math.floor(Math.random() * 10000000).toString(16);
@@ -56,18 +57,30 @@ class App extends React.Component {
           ) : (
             this.state.colors.map((elem, i) => {
               return (
-                <div className="color-selection" key={i}>
-                  <div className="color-box" style={{ background: elem }}></div>
-                  <div className="hex">{elem}</div>
-                  <button
-                    onClick={() => {
-                      this.remove(elem);
-                    }}
-                    className="remove"
-                  >
-                    Remove
-                  </button>
-                </div>
+                <CSSTransition
+                  key={i}
+                  ref={elem}
+                  in={true}
+                  appear={true}
+                  timeout={500}
+                  classNames="color-item"
+                >
+                  <div className="color-selection" key={i}>
+                    <div
+                      className="color-box"
+                      style={{ background: elem }}
+                    ></div>
+                    <div className="hex">{elem}</div>
+                    <button
+                      onClick={() => {
+                        this.remove(elem);
+                      }}
+                      className="remove"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </CSSTransition>
               );
             })
           )}
